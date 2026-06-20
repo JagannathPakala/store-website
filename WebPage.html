@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Sri Dresses — Men's, Women's & Kids Wear, Textiles</title>
+<meta name="description" content="Your neighborhood store for men's wear, women's wear, kids wear and textiles. Visit us today.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#15171C;
+    --cream:#F7F4EE;
+    --sand:#E8DCC8;
+    --rust:#C8443C;
+    --rust-dark:#A6342D;
+    --olive:#3D4A3A;
+    --line: rgba(21,23,28,0.12);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Bebas Neue', sans-serif;
+    font-weight:400;
+    letter-spacing:0.01em;
+    margin:0;
+    line-height:0.95;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; margin:0; padding:0; }
+
+  .eyebrow{
+    font-size:0.72rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--rust);
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ========== TOPBAR ========== */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.55rem;
+    letter-spacing:0.04em;
+  }
+  .logo span{ color:var(--rust); }
+  .nav-links{
+    display:flex;
+    gap:30px;
+    font-size:0.82rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  .nav-links a{ opacity:0.75; transition:opacity .2s; }
+  .nav-links a:hover{ opacity:1; }
+  .call-btn{
+    background:var(--ink);
+    color:var(--cream);
+    padding:11px 22px;
+    border-radius:2px;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    display:flex; align-items:center; gap:8px;
+  }
+  .call-btn svg{ width:14px; height:14px; }
+  @media (max-width:760px){
+    .nav-links{ display:none; }
+  }
+
+  /* ========== HERO ========== */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--cream);
+    padding:80px 24px 90px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40%; right:-15%;
+    width:60%; height:180%;
+    background:var(--rust);
+    opacity:0.12;
+    transform:rotate(18deg);
+  }
+  .hero-inner{
+    max-width:1180px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+  }
+  .hero .eyebrow{ color:var(--sand); }
+  .hero h1{
+    font-size:clamp(3.4rem, 11vw, 7.2rem);
+    margin-top:14px;
+    color:var(--cream);
+  }
+  .hero h1 .accent{ color:var(--rust); }
+  .hero-sub{
+    max-width:480px;
+    margin-top:22px;
+    font-size:1.05rem;
+    line-height:1.6;
+    color:rgba(247,244,238,0.78);
+  }
+  .hero-ctas{
+    display:flex;
+    gap:14px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    padding:15px 30px;
+    border-radius:2px;
+    font-size:0.82rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn svg{ width:15px; height:15px; }
+  .btn:active{ transform:scale(0.97); }
+  .btn-fill{
+    background:var(--rust);
+    color:var(--cream);
+  }
+  .btn-fill:hover{ background:var(--rust-dark); }
+  .btn-outline{
+    border:1.5px solid rgba(247,244,238,0.4);
+    color:var(--cream);
+  }
+  .btn-outline:hover{ border-color:var(--cream); }
+
+  /* marquee strip */
+  .marquee{
+    background:var(--rust);
+    color:var(--cream);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:13px 0;
+    border-top:1px solid rgba(247,244,238,0.15);
+  }
+  .marquee-track{
+    display:inline-flex;
+    gap:40px;
+    animation:scroll 26s linear infinite;
+    font-size:0.82rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  @keyframes scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation:none; }
+  }
+
+  /* ========== SECTION HEAD ========== */
+  .section{
+    padding:90px 24px;
+  }
+  .section.tight{ padding-top:70px; padding-bottom:70px; }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:48px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    margin-top:10px;
+  }
+  .section-head p{
+    max-width:340px;
+    font-size:0.92rem;
+    color:#5b6058;
+    line-height:1.55;
+    padding-bottom:6px;
+  }
+
+  /* ========== CATEGORY PANELS ========== */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+  }
+  @media (max-width:680px){
+    .cat-grid{ grid-template-columns:1fr; }
+  }
+
+  .cat-panel{
+    position:relative;
+    border-radius:4px;
+    padding:34px 28px;
+    min-height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    cursor:pointer;
+    overflow:hidden;
+    border:1px solid var(--line);
+    transition:transform .25s ease;
+  }
+  .cat-panel:hover{ transform:translateY(-4px); }
+  .cat-panel:active{ transform:translateY(-1px); }
+
+  .cat-panel[data-cat="men"]{ background:var(--ink); color:var(--cream); }
+  .cat-panel[data-cat="women"]{ background:var(--rust); color:var(--cream); }
+  .cat-panel[data-cat="kids"]{ background:var(--sand); color:var(--ink); }
+  .cat-panel[data-cat="textiles"]{ background:var(--olive); color:var(--cream); }
+
+  .cat-panel-tag{
+    position:absolute;
+    top:24px; left:28px;
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    opacity:0.7;
+  }
+  .cat-panel h3{
+    font-size:clamp(2.1rem, 6vw, 2.9rem);
+  }
+  .cat-panel .cat-desc{
+    margin-top:8px;
+    font-size:0.88rem;
+    opacity:0.85;
+    max-width:280px;
+  }
+  .cat-panel .cat-plus{
+    position:absolute;
+    top:24px; right:26px;
+    width:34px; height:34px;
+    border-radius:50%;
+    border:1.4px solid currentColor;
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .3s ease;
+  }
+  .cat-panel.open .cat-plus{ transform:rotate(135deg); }
+
+  .cat-detail{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+  }
+  .cat-panel.open .cat-detail{ max-height:400px; }
+  .cat-detail-inner{
+    padding-top:22px;
+    margin-top:18px;
+    border-top:1px solid currentColor;
+    opacity:0.85;
+  }
+  .item-list{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:8px 16px;
+  }
+  .item-list div{
+    font-size:0.87rem;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .item-list div::before{
+    content:"—";
+    opacity:0.6;
+  }
+
+  /* ========== WHY VISIT (3 col strip) ========== */
+  .why{
+    background:var(--ink);
+    color:var(--cream);
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:rgba(247,244,238,0.12);
+    border:1px solid rgba(247,244,238,0.12);
+  }
+  @media (max-width:760px){
+    .why-grid{ grid-template-columns:1fr; }
+  }
+  .why-card{
+    background:var(--ink);
+    padding:40px 30px;
+  }
+  .why-card .num{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:2.4rem;
+    color:var(--rust);
+    line-height:1;
+  }
+  .why-card h4{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:1.02rem;
+    margin-top:14px;
+    text-transform:none;
+  }
+  .why-card p{
+    margin-top:8px;
+    font-size:0.87rem;
+    color:rgba(247,244,238,0.65);
+    line-height:1.55;
+  }
+
+  /* ========== BIG PROMO BANNER ========== */
+  .promo{
+    background:var(--sand);
+    padding:90px 24px;
+    text-align:center;
+  }
+  .promo .eyebrow{ justify-content:center; display:flex; }
+  .promo h2{
+    font-size:clamp(2.6rem, 8vw, 4.6rem);
+    margin-top:14px;
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .promo p{
+    max-width:460px;
+    margin:18px auto 0;
+    font-size:0.95rem;
+    color:#5b6058;
+    line-height:1.6;
+  }
+
+  /* ========== VISIT US / CONTACT ========== */
+  .visit{
+    padding:90px 24px;
+  }
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+  @media (max-width:780px){
+    .visit-grid{ grid-template-columns:1fr; }
+  }
+  .visit-grid h2{
+    font-size:clamp(2.4rem, 6vw, 3.4rem);
+  }
+  .visit-grid > div:first-child p{
+    margin-top:16px;
+    color:#5b6058;
+    font-size:0.95rem;
+    line-height:1.6;
+    max-width:380px;
+  }
+
+  .info-card{
+    background:var(--ink);
+    color:var(--cream);
+    border-radius:6px;
+    padding:36px 32px;
+  }
+  .info-row{
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(247,244,238,0.14);
+  }
+  .info-row:first-child{ padding-top:0; }
+  .info-row:last-child{ border-bottom:none; padding-bottom:0; }
+  .info-icon{
+    width:36px; height:36px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:rgba(247,244,238,0.1);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .info-icon svg{ width:17px; height:17px; }
+  .info-row h4{
+    font-family:'Manrope', sans-serif;
+    font-size:0.92rem;
+    font-weight:700;
+    margin:0 0 4px;
+  }
+  .info-row p{
+    margin:0;
+    font-size:0.86rem;
+    color:rgba(247,244,238,0.7);
+    line-height:1.55;
+  }
+  .info-card .cta-row{
+    display:flex;
+    gap:10px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  .info-card .btn{ flex:1; min-width:140px; justify-content:center; }
+
+  /* ========== FOOTER ========== */
+  footer{
+    background:var(--olive);
+    color:rgba(247,244,238,0.65);
+    text-align:center;
+    padding:32px 24px;
+    font-size:0.78rem;
+  }
+
+  /* focus visibility */
+  .cat-panel:focus-visible, .btn:focus-visible, .call-btn:focus-visible{
+    outline:2.5px solid var(--rust);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">SAI<span>·</span>SRI DRESSES</div>
+    <div class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#why">Why Us</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="tel:+919177277439" class="call-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Fashion For Every Generation</span>
+    <h1>FASHION FOR<br>EVERY <span class="accent">GENERATION.</span></h1>
+    <p class="hero-sub">20+ Years of Trust & Style. From men's wear and women's fashion to kids' clothing, blouse pieces, shawls, towels and everyday essentials — all under one roof.</p>
+    <div class="hero-ctas">
+      <a href="#shop" class="btn btn-fill">
+        See what we sell
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#visit" class="btn btn-outline">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Men's Wear</span><span>★</span>
+    <span>Women's Wear</span><span>★</span>
+    <span>Kids Wear</span><span>★</span>
+    <span>Textiles &amp; Home Linen</span><span>★</span>
+    <span>Men's Wear</span><span>★</span>
+    <span>Women's Wear</span><span>★</span>
+    <span>Kids Wear</span><span>★</span>
+    <span>Textiles &amp; Home Linen</span><span>★</span>
+  </div>
+</div>
+
+<!-- SHOP BY CATEGORY -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Shop by category</span>
+        <h2>What we sell</h2>
+      </div>
+      <p>Tap a panel to see everything stocked in that section — no browsing required.</p>
+    </div>
+
+    <div class="cat-grid">
+
+      <!-- MEN -->
+      <div class="cat-panel" data-cat="men" tabindex="0" role="button" aria-expanded="false">
+        <span class="cat-panel-tag">01 — Daily &amp; festive</span>
+        <span class="cat-plus">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5v14"/></svg>
+        </span>
+        <h3>Men's Wear</h3>
+        <p class="cat-desc">Formal, casual &amp; ethnic essentials</p>
+        <div class="cat-detail">
+          <div class="cat-detail-inner">
+            <div class="item-list">
+              <div>Shirts</div>
+              <div>T-shirts</div>
+              <div>Jeans</div>
+              <div>Formal trousers</div>
+              <div>Kurtas</div>
+              <div>Blazers</div>
+              <div>Track pants</div>
+              <div>Innerwear</div>
+              <div>Belts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WOMEN -->
+      <div class="cat-panel" data-cat="women" tabindex="0" role="button" aria-expanded="false">
+        <span class="cat-panel-tag">02 — Sarees to streetwear</span>
+        <span class="cat-plus">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5v14"/></svg>
+        </span>
+        <h3>Women's Wear</h3>
+        <p class="cat-desc">Sarees, suits &amp; everyday styles</p>
+        <div class="cat-detail">
+          <div class="cat-detail-inner">
+            <div class="item-list">
+              <div>Sarees</div>
+              <div>Salwar suits</div>
+              <div>Kurtis</div>
+              <div>Leggings</div>
+              <div>Western tops</div>
+              <div>Dupattas</div>
+              <div>Nightwear</div>
+              <div>Innerwear</div>
+              <div>Dress materials</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KIDS -->
+      <div class="cat-panel" data-cat="kids" tabindex="0" role="button" aria-expanded="false">
+        <span class="cat-panel-tag">03 — 0–14 years</span>
+        <span class="cat-plus">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5v14"/></svg>
+        </span>
+        <h3>Kids Wear</h3>
+        <p class="cat-desc">Daily wear, party wear &amp; school basics</p>
+        <div class="cat-detail">
+          <div class="cat-detail-inner">
+            <div class="item-list">
+              <div>T-shirts</div>
+              <div>Frocks &amp; dresses</div>
+              <div>Shorts &amp; pants</div>
+              <div>Ethnic sets</div>
+              <div>Nightwear</div>
+              <div>School uniforms</div>
+              <div>Winter wear</div>
+              <div>Innerwear</div>
+              <div>Infant rompers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEXTILES -->
+      <div class="cat-panel" data-cat="textiles" tabindex="0" role="button" aria-expanded="false">
+        <span class="cat-panel-tag">04 — By the metre</span>
+        <span class="cat-plus">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5v14"/></svg>
+        </span>
+        <h3>Textiles</h3>
+        <p class="cat-desc">Fabric &amp; home linen</p>
+        <div class="cat-detail">
+          <div class="cat-detail-inner">
+            <div class="item-list">
+              <div>Cotton fabric</div>
+              <div>Silk fabric</div>
+              <div>Bedsheets</div>
+              <div>Curtains</div>
+              <div>Towels</div>
+              <div>Pillow covers</div>
+              <div>Blouse pieces</div>
+              <div>Table linen</div>
+              <div>Tailoring on order</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY VISIT -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head" style="border:none;">
+      <div>
+        <span class="eyebrow" style="color:var(--rust);">Why visit us</span>
+        <h2 style="color:var(--cream);">The in-person difference</h2>
+      </div>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="num">01</div>
+      <h4>Try before you buy</h4>
+      <p>Every size, every fit, checked in the mirror — not guessed from a screen.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">02</div>
+      <h4>One stop, whole family</h4>
+      <p>Men's, women's, kids' wear and fabric — sorted in a single visit.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">03</div>
+      <h4>Tailoring on request</h4>
+      <p>Pick your fabric, get it stitched to fit — no extra trip needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<section class="promo">
+  <span class="eyebrow">New stock, every season</span>
+  <h2>Festive collection now in store</h2>
+  <p>Fresh arrivals across men's, women's and kids' wear — come see what's new before it's gone.</p>
+</section>
+
+<!-- VISIT US -->
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Find us</span>
+      <h2>Visit the store</h2>
+      <p>Tucked into the main market — easy to find once you know to look for the green signboard near the bus stop.</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-row">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h4>Address</h4>
+          <p>B-Zone Center, Ramakrishnapur, Mancherial District, Telangana</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>Store hours</h4>
+          <p>Mon–Sat: 9:00 AM – 9:00 PM · Sun: 9:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <h4>Call ahead</h4>
+          <p>Check stock or ask about tailoring before you visit</p>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a href="https://maps.app.goo.gl/WoNXesCZYx2Amm" class="btn btn-fill" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Open in Maps
+        </a>
+        <a href="tel:+919177277439" class="btn btn-outline">Call store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Sai Sri Dresses — sample page, info to be replaced with real shop details.
+</footer>
+
+<script>
+  document.querySelectorAll('.cat-panel').forEach(panel => {
+    function toggle(){
+      const isOpen = panel.classList.contains('open');
+      panel.classList.toggle('open');
+      panel.setAttribute('aria-expanded', String(!isOpen));
+    }
+    panel.addEventListener('click', toggle);
+    panel.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
